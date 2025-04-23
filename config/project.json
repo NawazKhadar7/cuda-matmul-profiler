@@ -1,0 +1,47 @@
+{
+  "algorithm": "Naive kernel assigns one output element per thread. Tiled kernel loads A/B blocks into shared memory, synchronizes, accumulates products and zero-pads tail tiles. Row-major cuBLAS uses C^T=B^T A^T by swapping operands. Reference: https://docs.nvidia.com/cuda/cuda-c-programming-guide/ and https://docs.nvidia.com/cuda/cublas/ .",
+  "architecture": "Python validation harness \u2192 NumPy exact baseline and CPU methods. Native build \u2192 C++ CPU target plus optional CUDA kernels/benchmark. CUDA events exclude host/device transfers from measured kernel loops.",
+  "data_model": "Matrices use row-major float arrays. Multiplication dimensions M,K,N determine MxN output. GPU harness currently benchmarks square matrices; Python tests cover rectangles.",
+  "description": "Raw CUDA naive and shared-memory tiled kernels with a cuBLAS timing harness and independently validated CPU references.",
+  "design": "Separate correctness from timing. Warm up each GPU method, execute ten repetitions and check absolute error against CPU results. Report event timings with device/toolkit details.",
+  "families": [
+    "naive",
+    "tile16",
+    "tile32",
+    "rectangular",
+    "edges",
+    "batched"
+  ],
+  "family_notes": [
+    "Execute explicit scalar-loop CPU multiplication.",
+    "Check tiled multiplication with a 16-element tile.",
+    "Check tiled multiplication with a 32-element CPU tile.",
+    "Multiply rectangular matrices with unequal inner/output dimensions.",
+    "Test dimensions that leave partial tiles.",
+    "Validate three independent matrix pairs."
+  ],
+  "file_count": 165,
+  "limitations": "CUDA, cuBLAS, CMake and Nsight are not available in the generation environment. GPU sources are uncompiled and unexecuted here. Python tile32 is a CPU workload; only tile16 is provided in CUDA. No GPU speedup, memory-throughput or transformer-scale claim. cuBLAS may select hardware-specific math paths.",
+  "numpy": true,
+  "operations": "Run scripts/native_build.py for C++ verification. On an NVIDIA workstation use cmake -S native -B build; cmake --build build; ./build/cuda_benchmark 128. Review GPU error tolerance for larger shapes.",
+  "scope": "Runnable Python CPU oracles, compiled C++ CPU baseline, raw naive CUDA kernel, 16x16 shared-memory CUDA kernel, CUDA-event timing and cuBLAS comparison source.",
+  "security": "Treat this as educational code; review it before handling trusted data.",
+  "sizes": [
+    8,
+    16,
+    24,
+    32,
+    48,
+    64
+  ],
+  "slug": "cuda-matmul-profiler",
+  "title": "GPU Matrix Multiplication Kernel & Profiler",
+  "topics": [
+    "cuda",
+    "gpu",
+    "matrix-multiplication",
+    "cublas",
+    "performance"
+  ],
+  "workload_count": 36
+}
