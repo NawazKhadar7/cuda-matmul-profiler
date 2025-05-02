@@ -1,0 +1,10 @@
+{
+  "absolute_tolerance": 0.001,
+  "cpu_tiles": [
+    16,
+    32
+  ],
+  "cuda_tile": 16,
+  "event_repetitions": 10,
+  "gpu_executed_here": false
+}
