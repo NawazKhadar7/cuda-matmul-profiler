@@ -1,0 +1,21 @@
+{
+  "checks": {
+    "batches": {
+      "equals": 3
+    },
+    "correct": {
+      "equals": true
+    },
+    "gpu_executed": {
+      "equals": false
+    },
+    "max_absolute_error": {
+      "max": 1e-09
+    },
+    "size": {
+      "equals": 64
+    }
+  },
+  "rationale": "Validate three independent matrix pairs.",
+  "synthetic": true
+}
