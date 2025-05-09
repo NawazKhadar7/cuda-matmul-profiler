@@ -1,0 +1,25 @@
+{
+  "checks": {
+    "batches": {
+      "equals": 1
+    },
+    "correct": {
+      "equals": true
+    },
+    "gpu_executed": {
+      "equals": false
+    },
+    "max_absolute_error": {
+      "max": 1e-09,
+      "min": 0
+    },
+    "scalar_products": {
+      "equals": 1
+    },
+    "size": {
+      "equals": 1
+    }
+  },
+  "rationale": "The smallest CPU result must agree with NumPy.",
+  "synthetic": true
+}
