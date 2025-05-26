@@ -1,0 +1,25 @@
+{
+  "checks": {
+    "batches": {
+      "equals": 1
+    },
+    "correct": {
+      "equals": true
+    },
+    "gpu_executed": {
+      "equals": false
+    },
+    "max_absolute_error": {
+      "max": 1e-09,
+      "min": 0
+    },
+    "scalar_products": {
+      "equals": 2704
+    },
+    "size": {
+      "equals": 13
+    }
+  },
+  "rationale": "The edges family adds three rows to the requested size.",
+  "synthetic": true
+}
