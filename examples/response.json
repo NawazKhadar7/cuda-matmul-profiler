@@ -1,0 +1,19 @@
+{
+  "metrics": {
+    "batches": 1,
+    "correct": true,
+    "gpu_executed": false,
+    "max_absolute_error": 1.7763568394002505e-15,
+    "scalar_products": 512,
+    "size": 8
+  },
+  "output": {
+    "execution": "CPU reference; raw CUDA sources require NVIDIA runtime",
+    "shapes": [
+      [
+        8,
+        8
+      ]
+    ]
+  }
+}
