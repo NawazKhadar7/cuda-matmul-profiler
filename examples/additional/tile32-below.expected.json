@@ -1,0 +1,25 @@
+{
+  "checks": {
+    "batches": {
+      "equals": 1
+    },
+    "correct": {
+      "equals": true
+    },
+    "gpu_executed": {
+      "equals": false
+    },
+    "max_absolute_error": {
+      "max": 1e-09,
+      "min": 0
+    },
+    "scalar_products": {
+      "equals": 29791
+    },
+    "size": {
+      "equals": 31
+    }
+  },
+  "rationale": "The CPU tile32 path must handle a nearly complete tile.",
+  "synthetic": true
+}
