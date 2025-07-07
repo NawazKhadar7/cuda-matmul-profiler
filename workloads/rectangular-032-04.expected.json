@@ -1,0 +1,21 @@
+{
+  "checks": {
+    "batches": {
+      "equals": 1
+    },
+    "correct": {
+      "equals": true
+    },
+    "gpu_executed": {
+      "equals": false
+    },
+    "max_absolute_error": {
+      "max": 1e-09
+    },
+    "size": {
+      "equals": 32
+    }
+  },
+  "rationale": "Multiply rectangular matrices with unequal inner/output dimensions.",
+  "synthetic": true
+}
